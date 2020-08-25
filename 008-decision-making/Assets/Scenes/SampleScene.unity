@@ -407,3 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isItGoingToRain: 0
+  amIanEmployee: 1
+  age: 18
+  money: 10
+  fatherIsARockStar: 0

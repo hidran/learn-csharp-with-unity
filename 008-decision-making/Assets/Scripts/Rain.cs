@@ -5,14 +5,21 @@ using UnityEngine;
 public class Rain : MonoBehaviour
 {
     public bool isItGoingToRain = false;
+
     public bool amIanEmployee = true;
+
     public int age = 18;
+
     public int money = 10;
+
     public bool fatherIsARockStar = true;
+
     // Start is called before the first frame update
     void Start()
     {
+       
         amIanEmployee = !amIanEmployee;
+
         if (isItGoingToRain) {
             Debug.Log("I should take my umbrella");
 
@@ -66,10 +73,11 @@ public class Rain : MonoBehaviour
         */
 
     }
-
+   
     // Update is called once per frame
     void Update()
     {
         
     }
+    
 }
