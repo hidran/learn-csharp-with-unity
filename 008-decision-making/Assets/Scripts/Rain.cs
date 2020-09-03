@@ -14,9 +14,14 @@ public class Rain : MonoBehaviour
 
     public bool fatherIsARockStar = true;
 
+    public int applePrice = 8;
+    public int discount = -5;
+    public int pearPrice = 3;
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log((3*applePrice + 4*pearPrice) + discount);
        
         amIanEmployee = !amIanEmployee;
 
