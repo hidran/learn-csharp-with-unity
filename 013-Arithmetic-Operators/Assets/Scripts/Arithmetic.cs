@@ -20,7 +20,23 @@ public class Arithmetic : MonoBehaviour
     {
         // binaryOperators();
         // unaryOperators();
+        
+        int accountNumber = 1234;
         compoundAssignment();
+        if(numberOfApples> 10)
+        {
+            int depositNumber = 1234;
+            accountNumber = 222;
+             pocketMoney = 100f;
+        } else
+        {
+            accountNumber = 2;
+        }
+        {
+            pocketMoney = 22;
+           
+        }
+        
     }
 
     private void compoundAssignment()
@@ -35,10 +51,12 @@ public class Arithmetic : MonoBehaviour
         Debug.Log("number of apples /4 : " + numberOfApples);
         numberOfApples %= 3;
         Debug.Log("number of apples %3 : " + numberOfApples);
+       
     }
     private void unaryOperators()
     {
         int myNumber = 4;
+        
         Debug.Log(+myNumber);
          myNumber = -4;
         Debug.Log(+myNumber);
