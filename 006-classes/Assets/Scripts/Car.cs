@@ -8,7 +8,6 @@ public class Car : MonoBehaviour {
     // public string color = "Red";
     public Color color = Color.red;
     public int hp = 150;
-    private operatingSystems = ['ANDROID', 'IOS'];
     private int numberOfPistons = 3;
 
     // Start is called before the first frame update
