@@ -6,18 +6,31 @@ public class Methods : MonoBehaviour
 {
    protected  void Awake()
     {
-        int number = 16;
+        int number = 17;
 
-        IsItEven(number);
+      bool  even = IsItEven(number);
+        // var even = IsItEven(number);
+        Debug.Log("============================================");
+        if (even)
+        {
+            Debug.Log(number + " is even");
+        } else
+        {
+            Debug.Log(number + "is odd");
+        }
+        Debug.Log("============================================");
         number = 17;
         IsItEven(number);
         IsItEven(23);
         HelloBeforeStartingTheGame();
         Debug.Log("============================================");
-        SumNumbers(200, 300, '-');
+      int total =  SumNumbers(200, 300, '-');
+        Debug.Log(" ============================================");
+        Debug.Log("200 - 300 = " + total);
+        total =  SumNumbers(20, 30, '*');
         Debug.Log("============================================");
-        SumNumbers(20, 30, '*');
-        Debug.Log("============================================");
+        string message = string.Format("20 * 30 = {0:d}, {1}", total, "Hidran");
+        Debug.Log(message);
         SumNumbers(  4,5);
         Debug.Log("============================================");
         //SumNumbers("12", "13");
@@ -35,15 +48,18 @@ public class Methods : MonoBehaviour
         
     }
 
-   void IsItEven( int num)
+   bool IsItEven( int num)
     {
         if (num % 2 == 0)
         {
             Debug.Log("Number " + num + " is Even");
+            return true;
         }
+       //return false;
         else
         {
             Debug.Log("Number " + num + "  is Odd");
+            return false;
         }
     }
    void HelloBeforeStartingTheGame()
@@ -60,7 +76,7 @@ public class Methods : MonoBehaviour
 
 
     }
-    void SumNumbers(int numberOne = 0, int numberTwo = 0,char opType = '+')
+    int SumNumbers(int numberOne = 0, int numberTwo = 0,char opType = '+')
     {
         int result = 0;
         if (opType == '+')
@@ -73,7 +89,7 @@ public class Methods : MonoBehaviour
         {
             result = numberOne * numberTwo;
         }
-        
-        Debug.Log(numberOne + "" + opType + "" + numberTwo + " =" + result);
+        return result;
+      //  Debug.Log(numberOne + "" + opType + "" + numberTwo + " =" + result);
     }
 }
