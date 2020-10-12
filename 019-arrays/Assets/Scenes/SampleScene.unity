@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 271576392}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,6 +505,13 @@ MonoBehaviour:
   - Scott
   - John
   numbers: 
+  enemies2:
+  - Bad guy1
+  - Bad guy2
+  - Cyclope
+  - Batman
+  - Car
+  - Boss
   enemies:
   - {fileID: 0}
   - {fileID: 0}

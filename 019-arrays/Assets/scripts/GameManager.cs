@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,17 +21,60 @@ public class GameManager : MonoBehaviour
     };
     // List<T> = new List<T>();
     List<string> newEnemies = new List<string>();
-    /*List<string> newEnemies = new List<string>() { 
-        "Bad guy",
-        "Bad guy",
-        "Cyclope",
-        "Batman",
-        "Car",
-        "Boss"};
-    "Bad guy","Cyclope","Car", "Boss"}
-    */
 
+    ArrayList userInfo = new ArrayList();
+    List<Object> userInfo2 = new List<Object>();
     public GameObject[] enemies;
+    public Hashtable personalInfo = new Hashtable();
+    public Dictionary<string, string> spanishNumbers = new Dictionary<string, string>()
+    {
+        {"one", "uno" },
+         {"two", "dos" }
+    };
+
+    void PopulateNumbers()
+    {
+        spanishNumbers["two"] = "Dos";
+        spanishNumbers["three"] ="tres";
+        spanishNumbers.Add("four", "cuatro");
+
+        if (!spanishNumbers.ContainsKey("five"))
+        {
+            spanishNumbers.Add("five", "cinco");
+            print("five in Spanish is " + spanishNumbers["five"]);
+        }
+    }
+        void PopulatePersonalInfo()
+    {
+        var myObject = GameObject.Find("Sphere");
+        personalInfo.Add("fullname", "Juan Gabriel");
+        personalInfo.Add("age", 28);
+        personalInfo.Add("object", myObject);
+        personalInfo.Add("nickname", "Joanby");
+        personalInfo.Add(10, "Level");
+        print(personalInfo[10]);
+        print("My fullname is " + personalInfo["fullname"]);
+        var nickname = (string) personalInfo["nickname"];
+        print("My nickname is " + nickname);
+        if (personalInfo.Contains("age"))
+        {
+            print("I am " + personalInfo["age"] + " years old");
+        }
+        if (personalInfo.ContainsValue(myObject))
+        {
+            print("I have a " + myObject.tag);
+        }
+    }
+    void PopulateUserInfo()
+    {
+        userInfo2.Add("Juan Gabriel");
+        userInfo2.Add("Joanby");
+        userInfo2.Add(28);
+        userInfo2.Add(GameObject.Find("Sphere"));
+        print("Item at position 3 is " + userInfo2[3].GetType());
+        var userObject = (GameObject) userInfo2[3];
+        print("Item at position 3 is " + userObject.tag);
+    }
      void showData()
     {
         var currentEnemy = enemies2[2];
@@ -45,8 +90,13 @@ public class GameManager : MonoBehaviour
     }
      void Awake()
     {
-       
-
+        Debug.Log("==========================================");
+        PopulateNumbers();
+        Debug.Log("==========================================");
+        PopulatePersonalInfo();
+        Debug.Log("==========================================");
+        PopulateUserInfo();
+        Debug.Log("==========================================");
         // enemies2[0..5]
         // newEnemies =;
         List<string> enemies3 = new List<string>(enemies2);
