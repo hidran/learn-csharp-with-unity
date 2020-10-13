@@ -22,7 +22,14 @@ public class GameManager : MonoBehaviour
     // List<T> = new List<T>();
     List<string> newEnemies = new List<string>();
 
-    ArrayList userInfo = new ArrayList();
+    ArrayList userInfo = new ArrayList()
+    {
+        "Hidran Arias",
+        48,
+        "Turin",
+        "Italy",
+        true
+    };
     List<Object> userInfo2 = new List<Object>();
     public GameObject[] enemies;
     public Hashtable personalInfo = new Hashtable();
@@ -88,8 +95,71 @@ public class GameManager : MonoBehaviour
         currentNewEnemy = newEnemies[newEnemies.Count -1];
         print("Last new enemy is " + currentNewEnemy);
     }
-     void Awake()
+     void ShowEnemies()
     {
+        int count = 0;
+        foreach( var enemy in enemies2)
+        {
+            print( count + " - " + enemy);
+            count++;
+        }
+     
+    }
+    void ShowUserInfo()
+    {
+        var test = (string) userInfo[2];
+       
+        int count = 0;
+        foreach (var info in userInfo)
+        {
+            print(count + " - " + info);
+            count++;
+           
+        }
+
+    }
+    void ShowUserInfo2()
+    {
+        int count = 0;
+        foreach (var info2 in userInfo2)
+        {
+            print(count + " - " + info2);
+            var test = info2;
+            count++;
+        }
+    }
+
+    
+        void ShowDictHashTable()
+            {
+             foreach( var k in personalInfo.Keys)
+            {
+                print(k + " is = " + personalInfo[k]);
+            }
+        Debug.Log("=================DICTIONARY ENTRY=========================");
+        foreach (DictionaryEntry element in personalInfo)
+        {
+            print(element.Key + " is = " + element.Value);
+        }
+        Debug.Log("=================DICTIONARY KeyValuePair=========================");
+
+        foreach (KeyValuePair<string,string> number in spanishNumbers)
+        {
+            print( number.Key.ToUpper() +  " is = " + number.Value);
+        }
+    }
+    void Awake()
+    {
+        Debug.Log("=================SHOW USERINFO=========================");
+        ShowUserInfo();
+        Debug.Log("==========================================");
+
+        Debug.Log("=================SHOW USERINFO=========================");
+        ShowUserInfo();
+        Debug.Log("==========================================");
+
+        Debug.Log("=================SHOW ENEMIES=========================");
+        ShowEnemies();
         Debug.Log("==========================================");
         PopulateNumbers();
         Debug.Log("==========================================");
@@ -97,6 +167,13 @@ public class GameManager : MonoBehaviour
         Debug.Log("==========================================");
         PopulateUserInfo();
         Debug.Log("==========================================");
+            Debug.Log("===============SHOW PERSONAL INFO===========================");
+            ShowDictHashTable();
+            Debug.Log("==========================================");
+            Debug.Log("=================SHOW USERINFO2=========================");
+        ShowUserInfo2();
+        Debug.Log("==========================================");
+
         // enemies2[0..5]
         // newEnemies =;
         List<string> enemies3 = new List<string>(enemies2);
