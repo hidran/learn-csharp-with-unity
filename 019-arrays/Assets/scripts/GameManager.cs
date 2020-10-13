@@ -38,7 +38,20 @@ public class GameManager : MonoBehaviour
         {"one", "uno" },
          {"two", "dos" }
     };
-
+    int FindItemIndex(IList arr, string item)
+    {
+        int i = -1;
+        for(; i < arr.Count; i++)
+        {
+            if(item == (string) arr[i])
+            {
+               
+                break;
+            }
+           
+        }
+        return i;
+    }
     void PopulateNumbers()
     {
         spanishNumbers["two"] = "Dos";
@@ -205,6 +218,18 @@ public class GameManager : MonoBehaviour
     }
     void Awake()
     {
+        newEnemies.Add("Spider");
+        newEnemies.Add("Boss");
+        int bossIdx = FindItemIndex(newEnemies, "Boss");
+        if(bossIdx > -1)
+        {
+            print("Boss was found at postion " + bossIdx);
+        }
+        else
+        {
+            print("Boss was not found!");
+        }
+        return;
         Debug.Log("=================SHOW USERINFO=========================");
         ShowUserInfo();
         Debug.Log("==========================================");
@@ -273,5 +298,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    bool IsItEven(int number)
+    {
+        return number % 2 == 0;
     }
 }
