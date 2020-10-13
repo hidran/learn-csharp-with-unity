@@ -107,6 +107,30 @@ public class GameManager : MonoBehaviour
     }
     void ShowUserInfo()
     {
+        int wCount = 20;
+        while (wCount < 10)
+        {
+            print("printed with while loop: " + wCount);
+            wCount++;
+        }
+        wCount = 0;
+        do
+        {
+            print("printed with while reverse loop: " + wCount);
+            wCount--;
+        }
+        while (wCount > 0);
+        wCount = 1;
+        while (true)
+        {
+            if(wCount %4 == 0 && wCount%400 == 0)
+            {
+                print(wCount + " is a leap year");
+                break;
+            }
+            wCount++;
+        }
+
         for(int i = 0; i<100 ; i++ )
         {
             if (i == 69)
