@@ -107,9 +107,40 @@ public class GameManager : MonoBehaviour
     }
     void ShowUserInfo()
     {
-        var test = (string) userInfo[2];
-       
+        for(int i = 0; i<100 ; i++ )
+        {
+            if (i == 69)
+            {
+                break;
+            }
+            if ( i%2 != 0)
+            {
+                continue;
+            }
+            print("i = " + i);
+           
+        }
+        int j = 0;
+        for (; ; ){
+            if (j > 9)
+            {
+                break;
+            }
+            print("j = " + j);
+            
+            j++;
+        }
         int count = 0;
+        // 5 =  0 1 2 3 4
+        int counter = userInfo.Count;
+        print("USER INFO WITH FOR LOOP");
+        for( count = 0; count < counter; count++)
+        {
+            print(count + " - " + userInfo[count]);
+        }
+        var test = (string) userInfo[2];
+
+        count = 0;
         foreach (var info in userInfo)
         {
             print(count + " - " + info);
@@ -153,7 +184,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("=================SHOW USERINFO=========================");
         ShowUserInfo();
         Debug.Log("==========================================");
-
+        return;
         Debug.Log("=================SHOW USERINFO=========================");
         ShowUserInfo();
         Debug.Log("==========================================");
