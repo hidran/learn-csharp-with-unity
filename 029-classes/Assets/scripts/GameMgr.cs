@@ -14,6 +14,7 @@ public class GameMgr : MonoBehaviour
         myCar.model = "Aventador";
 
        Car neighborCar = new Car();
+
         myCar.color = Color.yellow;
         print("My car's color = " + myCar.color);
         print("My neihbor's car's color = " + neighborCar.color);
