@@ -11,18 +11,12 @@ public class Family : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        father = new Person();
-        father.name = "Juan Gabriel";
-        father.lastName = "Gomilas";
-        father.secondLastName = "Salas";
-        father.age = 28;
+        father = new Person("Juan Gabriel", "Gomilas", 28);
+
         father.isMarried = true;
-       
-        mother = new Person();
-        mother.name = "Mar";
-        mother.lastName = "Cardona";
-        mother.secondLastName = "Aranda";
-        mother.age = 20;
+
+        mother = new Person("Mar", "Cardona", "Aranda", father, 20);
+
         mother.isMarried = true;
         mother.isFather = false;
 
@@ -42,7 +36,7 @@ public class Family : MonoBehaviour
                 print(father.name + " is  not married to " + mother.name);
             }
         }
-        catch ( Exception exec)
+        catch (Exception exec)
         {
             print("an error occured " + exec.Message);
         }
@@ -57,12 +51,12 @@ public class Family : MonoBehaviour
 
         print(father.name + " and " + mother.name + " has a son called: "
             + son.name + " who's " + son.age + " years old");
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
